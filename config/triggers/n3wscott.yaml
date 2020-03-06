@@ -1,0 +1,10 @@
+apiVersion: eventing.knative.dev/v1alpha1
+kind: Trigger
+metadata:
+  name: n3wscott-sockeye
+  namespace: default
+spec:
+  filter: {}
+  subscriber:
+    uri: http://sockeye.default.d2k.n3wscott.com/
+
