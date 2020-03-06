@@ -1,0 +1,9 @@
+apiVersion: eventing.knative.dev/v1alpha1
+kind: Trigger
+metadata:
+  name: knobots-trigger
+  namespace: default
+spec:
+  filter: {}
+  subscriber:
+    uri: http://receiver.default.knobots.io

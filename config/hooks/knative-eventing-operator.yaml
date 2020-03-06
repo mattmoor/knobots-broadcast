@@ -1,0 +1,59 @@
+apiVersion: sources.knative.dev/v1alpha1
+kind: GitHubSource
+metadata:
+  name: knative-eventing-operator
+spec:
+  # The types of events to which we are listening.
+  eventTypes:
+  - check_suite
+  - commit_comment
+  - create
+  - delete
+  - deployment
+  - deployment_status
+  - fork
+  - gollum
+  - issue_comment
+  - issues
+  - label
+  - member
+  - milestone
+  - page_build
+  - ping
+  - project_card
+  - project_column
+  - project
+  - public
+  - pull_request
+  - pull_request_review
+  - pull_request_review_comment
+  - push
+  - release
+  - repository
+  - status
+  - team_add
+  - watch
+
+  # The repository to which we are listening.
+  # There should be a file like this for each watched repository.
+  ownerAndRepository: knative/eventing-operator
+
+  # This is the Github access token that is used to register
+  # the webhook.
+  accessToken:
+    secretKeyRef:
+      name: github-hook-secret
+      key: accessToken
+
+  # This is the secret that is registered alongside the webhook
+  # for Github to use to identify itself when calling our endpoint.
+  secretToken:
+    secretKeyRef:
+      name: github-hook-secret
+      key: secretToken
+
+  sink:
+    ref:
+      apiVersion: eventing.knative.dev/v1alpha1
+      kind: Broker
+      name: default
