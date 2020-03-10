@@ -1,7 +1,9 @@
 apiVersion: sources.knative.dev/v1alpha1
 kind: GitHubSource
 metadata:
-  name: knative-docs
+  name: knative-org
+  labels:
+    foo: bar
 spec:
   # The types of events to which we are listening.
   eventTypes:
@@ -34,9 +36,11 @@ spec:
   - team_add
   - watch
 
-  # The repository to which we are listening.
-  # There should be a file like this for each watched repository.
-  ownerAndRepository: knative/docs
+  # TODO(https://github.com/knative/eventing-contrib/issues/995): Drop this.
+  # secure: true
+
+  # The organization to which we are listening.
+  ownerAndRepository: knative
 
   # This is the Github access token that is used to register
   # the webhook.
