@@ -9,7 +9,7 @@ There are three key parts:
 
 ## Previewing the event stream
 
-You can get a preview of the event stream flowing from Knative using Scotty's [sockeye](https://github.com/n3wscott/sockeye) tool [here](http://display.default.broadcast.knobots.io).
+You can get a preview of the event stream flowing from Knative using Scotty's [sockeye](https://github.com/n3wscott/sockeye) tool [here](http://display.default.broadcast-eks.knobots.io).
 
 ## Receiving events
 
