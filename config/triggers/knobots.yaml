@@ -6,4 +6,4 @@ metadata:
 spec:
   filter: {}
   subscriber:
-    uri: http://receiver.default.knobots.io
+    uri: https://receiver.default.mink.knobots.io
